@@ -1,0 +1,55 @@
+﻿@model SIMS_Demo.Models.StudentProfile
+
+<h1>Student Profile</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Student ID:</td>
+            <td>@Model.StudentId</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Date of Birth:</td>
+            <td>@Model.DateOfBirth.ToString("yyyy-MM-dd")</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td>Department:</td>
+            <td>@Model.Department</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>@Model.Address</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>@Model.Phone</td>
+        </tr>
+        <tr>
+            <td>Guardian's Phone:</td>
+            <td>@Model.GuardianPhone</td>
+        </tr>
+        <tr>
+            <td>Admission Date:</td>
+            <td>@Model.AdmissionDate.ToString("yyyy-MM-dd")</td>
+        </tr>
+        <tr>
+            <td>Admission Status:</td>
+            <td>@Model.AdmissionStatus</td>
+        </tr>
+    </tbody>
+</table>
+
+@if (!string.IsNullOrEmpty(Model.ProfilePicturePath))
+{
+    <div>
+        <img src="@Model.ProfilePicturePath" alt="Profile Picture" style="max-width: 200px; max-height: 200px;" />
+    </div>
+}

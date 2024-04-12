@@ -1,0 +1,31 @@
+﻿@model List<SIMS_Demo.Models.Grade>
+
+<h1>Grade List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Semester</th>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Grade</th>
+            <th>Mark</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr>
+                <td>@grade.No</td>
+                <td>@grade.Semester</td>
+                <td>@grade.SubjectCode</td>
+                <td>@grade.SubjectName</td>
+                <td>@grade.GradeValue</td>
+                <td>@grade.Mark</td>
+                <td>@grade.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

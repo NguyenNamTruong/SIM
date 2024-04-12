@@ -1,27 +1,30 @@
-﻿@model SIMS_Demo.Models.TimetableEntry
+﻿@model SIMS_Demo.Models.Timetable
 
-@{
-    ViewData["Title"] = "Timetable Entry Detail";
-}
+<h1>Timetable Details</h1>
 
-<div class="container mt-6">
-    <h1>Timetable Entry Detail</h1>
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Title:</dt>
+        <dd class="col-sm-9">@Model.Title</dd>
 
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">@Model.CourseName</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Date:</strong> @Model.Date.ToString("dddd dd/MM/yyyy")</li>
-                <li class="list-group-item"><strong>Slot:</strong> @Model.Slot</li>
-                <li class="list-group-item"><strong>Student Group:</strong> @Model.StudentGroup</li>
-                <li class="list-group-item"><strong>Instructor:</strong> @Model.Instructor</li>
-                <li class="list-group-item"><strong>Session Number:</strong> @Model.SessionNumber</li>
-                <li class="list-group-item"><strong>Campus/Programme:</strong> @Model.CampusProgramme</li>
-            </ul>
-        </div>
-    </div>
+        <dt class="col-sm-3">Start Time:</dt>
+        <dd class="col-sm-9">@Model.StartTime.ToString("dd/MM/yyyy HH:mm")</dd>
 
-    <div class="mt-4 text-end">
-        <a class="btn btn-primary" asp-action="Index">Back to Timetable</a>
-    </div>
+        <dt class="col-sm-3">End Time:</dt>
+        <dd class="col-sm-9">@Model.EndTime.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-3">Location:</dt>
+        <dd class="col-sm-9">@Model.Location</dd>
+
+        <dt class="col-sm-3">Description:</dt>
+        <dd class="col-sm-9">@Model.Description</dd>
+
+        <dt class="col-sm-3">Organizer:</dt>
+        <dd class="col-sm-9">@Model.Organizer</dd>
+
+        <dt class="col-sm-3">Status:</dt>
+        <dd class="col-sm-9">@Model.Status</dd>
+    </dl>
 </div>
+
+<a asp-controller="Timetable" asp-action="Index" class="btn btn-primary">Back to List</a>
